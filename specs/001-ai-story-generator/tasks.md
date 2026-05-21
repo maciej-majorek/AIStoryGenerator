@@ -10,11 +10,11 @@ description: "Task list for AI Story Generator feature"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend .NET 10.0 project and solution at `backend/src/AIStoryGenerator.Api` and `backend/AIStoryGenerator.sln`
-- [ ] T002 [P] Create frontend React project at `frontend/` using approved toolchain (Vite or CRA) and initialize `frontend/src/`
-- [ ] T003 [P] Configure linting and formatting: add `.editorconfig`, `backend/.editorconfig`, `frontend/.eslintrc.js`, `.prettierrc` and enable `dotnet format` and `eslint` in CI
-- [ ] T004 [P] Add CI pipeline `.github/workflows/ci.yml` to run build, lint, tests, and bundle-size checks
-- [ ] T005 [P] Add performance and accessibility test harnesses: `tests/perf/` and `frontend/tests/accessibility/` with runners and baseline scripts
+- [X] T001 Create backend .NET 10.0 project and solution at `backend/src/AIStoryGenerator.Api` and `backend/AIStoryGenerator.sln`
+- [X] T002 [P] Create frontend React project at `frontend/` using approved toolchain (Vite or CRA) and initialize `frontend/src/`
+- [X] T003 [P] Configure linting and formatting: add `.editorconfig`, `backend/.editorconfig`, `frontend/.eslintrc.js`, `.prettierrc` and enable `dotnet format` and `eslint` in CI
+- [X] T004 [P] Add CI pipeline `.github/workflows/ci.yml` to run build, lint, tests, and bundle-size checks
+- [X] T005 [P] Add performance and accessibility test harnesses: `tests/perf/` and `frontend/tests/accessibility/` with runners and baseline scripts
 
 ---
 
@@ -22,15 +22,15 @@ description: "Task list for AI Story Generator feature"
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
-- [ ] T006 [P] Add API controller scaffold `backend/src/Controllers/GenerationController.cs` implementing POST `/api/v1/generate`
-- [ ] T007 [P] Create models: `backend/src/Models/StoryRequest.cs`, `backend/src/Models/GenerationJob.cs`, `backend/src/Models/GeneratedStory.cs`
-- [ ] T008 [P] Implement `StoryGeneratorService` in `backend/src/Services/StoryGeneratorService.cs` (provider orchestration)
-- [ ] T009 [P] Add provider abstraction `backend/src/Services/IStoryProvider.cs` and a placeholder provider `backend/src/Services/LocalMockStoryProvider.cs`
-- [ ] T010 [P] Implement safety & moderation middleware `backend/src/Middleware/SafetyMiddleware.cs`
-- [ ] T011 [P] Implement in-memory job store `backend/src/Services/JobStore/InMemoryJobStore.cs` for session-only jobs
-- [ ] T012 [P] Configure app settings and secrets: `backend/appsettings.json` and docs for AI provider keys in `.env.example`
-- [ ] T013 [P] Add error handling and structured logging: `backend/src/Infrastructure/ErrorHandlingMiddleware.cs` + logging config in `backend/appsettings.json`
-- [ ] T014 [P] Add request validation for `StoryRequest` (`backend/src/Validators/StoryRequestValidator.cs`)
+- [X] T006 [P] Add API controller scaffold `backend/src/Controllers/GenerationController.cs` implementing POST `/api/v1/generate`
+- [X] T007 [P] Create models: `backend/src/Models/StoryRequest.cs`, `backend/src/Models/GenerationJob.cs`, `backend/src/Models/GeneratedStory.cs`
+- [X] T008 [P] Implement `StoryGeneratorService` in `backend/src/Services/StoryGeneratorService.cs` (provider orchestration)
+- [X] T009 [P] Add provider abstraction `backend/src/Services/IStoryProvider.cs` and a placeholder provider `backend/src/Services/LocalMockStoryProvider.cs`
+- [X] T010 [P] Implement safety & moderation middleware `backend/src/Middleware/SafetyMiddleware.cs`
+- [X] T011 [P] Implement in-memory job store `backend/src/Services/JobStore/InMemoryJobStore.cs` for session-only jobs
+- [X] T012 [P] Configure app settings and secrets: `backend/appsettings.json` and docs for AI provider keys in `.env.example`
+- [X] T013 [P] Add error handling and structured logging: `backend/src/Infrastructure/ErrorHandlingMiddleware.cs` + logging config in `backend/appsettings.json`
+- [X] T014 [P] Add request validation for `StoryRequest` (`backend/src/Validators/StoryRequestValidator.cs`)
 
 **Checkpoint**: Foundation ready — user story work can begin
 
@@ -44,18 +44,18 @@ description: "Task list for AI Story Generator feature"
 
 ### Tests (must be written first)
 
-- [ ] T015 [P] [US1] Contract test for POST `/api/v1/generate` in `backend/tests/Contract/GenerationContractTests.cs`
-- [ ] T016 [P] [US1] Integration/end-to-end test for full UI flow in `frontend/tests/integration/generate_story.spec.ts`
+- [X] T015 [P] [US1] Contract test for POST `/api/v1/generate` in `backend/tests/Contract/GenerationContractTests.cs`
+- [X] T016 [P] [US1] Integration/end-to-end test for full UI flow in `frontend/tests/integration/generate_story.spec.ts`
 
 ### Implementation
 
-- [ ] T017 [US1] Implement controller action in `backend/src/Controllers/GenerationController.cs` (depends on T006, T007, T008)
-- [ ] T018 [US1] Implement orchestration in `backend/src/Services/StoryGeneratorService.cs` to call provider and return `GeneratedStory` (depends on T008, T009)
-- [ ] T019 [P] [US1] Create frontend form component `frontend/src/components/StoryForm.jsx` (or `.tsx`) to collect preferences (depends on T002)
-- [ ] T020 [P] [US1] Create frontend result viewer `frontend/src/components/StoryViewer.jsx` to display generated story
-- [ ] T021 [P] [US1] Implement frontend API client `frontend/src/services/api.ts` to call `/api/v1/generate`
-- [ ] T022 [US1] Implement loading, error, and retry UI behavior in `frontend/src/components/GenerateButton.jsx` and `StoryForm.jsx`
-- [ ] T023 [US1] Implement basic formatting helpers `frontend/src/utils/formatting.ts` to render Prose, Screenplay, Stageplay, Poem
+- [X] T017 [US1] Implement controller action in `backend/src/Controllers/GenerationController.cs` (depends on T006, T007, T008)
+- [X] T018 [US1] Implement orchestration in `backend/src/Services/StoryGeneratorService.cs` to call provider and return `GeneratedStory` (depends on T008, T009)
+- [X] T019 [P] [US1] Create frontend form component `frontend/src/components/StoryForm.jsx` (or `.tsx`) to collect preferences (depends on T002)
+- [X] T020 [P] [US1] Create frontend result viewer `frontend/src/components/StoryViewer.jsx` to display generated story
+- [X] T021 [P] [US1] Implement frontend API client `frontend/src/services/api.ts` to call `/api/v1/generate`
+- [X] T022 [US1] Implement loading, error, and retry UI behavior in `frontend/src/components/GenerateButton.jsx` and `StoryForm.jsx`
+- [X] T023 [US1] Implement basic formatting helpers `frontend/src/utils/formatting.ts` to render Prose, Screenplay, Stageplay, Poem
 
 **Checkpoint**: US1 should be independently testable and demoable
 
@@ -67,10 +67,10 @@ description: "Task list for AI Story Generator feature"
 
 **Independent Test**: Change one preference and verify regenerated story reflects the change via integration test.
 
-- [ ] T024 [P] [US2] Integration test for regenerate flow in `frontend/tests/integration/regenerate.spec.ts`
-- [ ] T025 [P] [US2] Preserve and restore form state and allow repeated generations in `frontend/src/components/StoryForm.jsx`
-- [ ] T026 [P] [US2] Implement optional idempotency/variant metadata support in `backend/src/Services/GenerationVariantService.cs`
-- [ ] T027 [P] [US2] Instrument telemetry for regeneration events in `backend/src/Services/TelemetryService.cs`
+- [X] T024 [P] [US2] Integration test for regenerate flow in `frontend/tests/integration/regenerate.spec.ts`
+- [X] T025 [P] [US2] Preserve and restore form state and allow repeated generations in `frontend/src/components/StoryForm.jsx`
+- [X] T026 [P] [US2] Implement optional idempotency/variant metadata support in `backend/src/Services/GenerationVariantService.cs`
+- [X] T027 [P] [US2] Instrument telemetry for regeneration events in `backend/src/Services/TelemetryService.cs`
 
 ---
 
@@ -80,9 +80,9 @@ description: "Task list for AI Story Generator feature"
 
 **Independent Test**: Verify copy/download actions transfer exact content to clipboard/file.
 
-- [ ] T028 [P] [US3] Add copy-to-clipboard and download controls in `frontend/src/components/ExportControls.jsx`
-- [ ] T029 [P] [US3] Unit tests for export and clipboard functionality in `frontend/tests/unit/export.spec.ts`
-- [ ] T030 [US3] Add `Download as .txt` server-side export support (if needed) in `backend/src/Controllers/ExportController.cs`
+- [X] T028 [P] [US3] Add copy-to-clipboard and download controls in `frontend/src/components/ExportControls.jsx`
+- [X] T029 [P] [US3] Unit tests for export and clipboard functionality in `frontend/tests/unit/export.spec.ts`
+- [X] T030 [US3] Add `Download as .txt` server-side export support (if needed) in `backend/src/Controllers/ExportController.cs`
 
 ---
 
@@ -90,11 +90,11 @@ description: "Task list for AI Story Generator feature"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T031 [P] Update documentation and quickstart: `specs/001-ai-story-generator/quickstart.md`, `README.md`
-- [ ] T032 [P] Accessibility and ARIA updates across `frontend/src/components/` (WCAG AA)
+- [X] T031 [P] Update documentation and quickstart: `specs/001-ai-story-generator/quickstart.md`, `README.md`
+- [X] T032 [P] Accessibility and ARIA updates across `frontend/src/components/` (WCAG AA)
 - [ ] T033 [P] Bundle size optimization and enforcement: `frontend/package.json` budget + CI checks
-- [ ] T034 [P] Add end-to-end smoke tests and add to CI: `frontend/tests/e2e/smoke.spec.ts`
-- [ ] T035 [P] Security & safety hardening: ensure moderation checks run in `SafetyMiddleware` and are tested
+- [X] T034 [P] Add end-to-end smoke tests and add to CI: `frontend/tests/e2e/smoke.spec.ts`
+- [X] T035 [P] Security & safety hardening: ensure moderation checks run in `SafetyMiddleware` and are tested
 
 ---
 
