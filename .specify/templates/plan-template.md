@@ -40,7 +40,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Gates determined based on `.specify/memory/constitution.md`:
+- Technology stack alignment: backend target `.NET 10.0`, frontend `React` (when applicable).
+- Quality gates: linting/static analysis, unit & integration tests in CI, performance benchmarks for critical paths.
+- UX/accessibility: UI changes MUST reference the shared component library and pass accessibility checks.
+
+The `/speckit.plan` command MUST populate the fields `Language/Version`, `Testing`, and `Performance Goals` to demonstrate compliance.
 
 ## Project Structure
 

@@ -53,6 +53,12 @@ description: "Task list template for feature implementation"
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
 
+**Constitution-driven setup**:
+- [ ] T001a Initialize backend project targeting `.NET 10.0` (dotnet new, solution files)
+- [ ] T001b Initialize frontend project using `create-react-app`/tooling aligned with project standards and shared component library
+- [ ] T001c Configure CI to run linting, static analysis, and full test suite on PRs
+- [ ] T001d Add baseline performance and accessibility test harnesses (where applicable)
+
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)

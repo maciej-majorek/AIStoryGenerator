@@ -1,50 +1,72 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+
+Version change: none -> 1.0.0
+Modified principles: Placeholder template -> Quality, Testing, UX Consistency, Performance
+Added sections: Technology Stack & Constraints
+Removed sections: none
+Templates requiring updates: ✅ .specify/templates/plan-template.md
+												 ✅ .specify/templates/spec-template.md
+												 ✅ .specify/templates/tasks-template.md
+Follow-up TODOs: RATIFICATION_DATE must be provided (TODO)
+-->
+
+# AIStoryGenerator Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 1. Code Quality (NON-NEGOTIABLE)
+All production code MUST be clear, maintainable, and reviewable. Code quality requirements:
+- **MUST** pass static analysis and linting rules defined in the repository.
+- **MUST** include clear public API documentation and usage examples for libraries/components.
+- **MUST** adhere to established naming, layering, and dependency rules to avoid cyclic or tightly-coupled modules.
+- **Rationale**: Maintainability scales with clarity; enforcing CI checks prevents entropy.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 2. Testing Standards (NON-NEGOTIABLE)
+Testing is mandatory and test-first where practical. Testing requirements:
+- **MUST** include unit tests that cover critical logic with a target minimum coverage defined per module (coverage targets set by the team).
+- **MUST** include integration tests for cross-component boundaries: backend↔frontend, API contracts, and persistence.
+- **MUST** include end-to-end tests for primary user journeys described in specs.
+- **MUST** run all tests in CI on every PR and block merges on failing tests.
+- **Rationale**: Automated tests are the primary guardrail for regressions and enable safe refactoring.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 3. User Experience Consistency (SHOULD)
+UX consistency across React frontends and any UI surfaces is required:
+- **SHOULD** use the shared component library and design tokens for layout, typography, and interaction patterns.
+- **MUST** document user-facing behavior and accessibility expectations in the spec for each feature (contrast, keyboard navigation, screen-reader labels).
+- **Rationale**: Consistent UX reduces user confusion and support burden; accessibility is a baseline requirement.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 4. Performance & Resource Constraints (MUST)
+Performance expectations must be explicit and measurable:
+- **MUST** define performance goals in the plan (e.g., p95 latency, memory footprint, throughput) for any feature that has SLA expectations.
+- **MUST** include performance tests or benchmarks for critical paths before merge.
+- **MUST** set and enforce resource budgets for client bundles (React) and server components (.NET) where applicable.
+- **Rationale**: Measurable targets protect user experience and platform costs.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Technology Stack & Constraints
+- **Backend**: .NET 10.0 (target runtime for server components and shared libraries).
+- **Frontend**: React (latest stable) with a shared component library for UI consistency.
+- **Builds**: CI pipelines MUST produce reproducible builds for both backend and frontend.
+- **Runtime Constraints**: Target deployment platforms and required OS/hosting specifics MUST be listed in the implementation plan.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow & Quality Gates
+- All changes MUST be delivered via feature branches and pull requests.
+- PRs **MUST** include: a short description, linked spec/plan, tests demonstrating the change, and evidence of passing CI checks.
+- Code review: at least one approving review from a team member other than the author; for high-risk or architectural changes two reviewers are recommended.
+- Gating: The following gates are enforced before merge:
+	- Linting and static analysis: pass
+	- Unit & integration tests: pass
+	- Performance benchmarks (when applicable): within target
+	- Accessibility checklist (for UI changes): pass
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+- Amendments to this constitution **MUST** be proposed via a documented PR referencing the reason and migration plan.
+- Approval for amendments: majority approval from active maintainers; material governance changes (principle removals/rewrites) require an explicit maintainer quorum.
+- Versioning policy: semantic versioning for the constitution itself. Bumps:
+	- MAJOR: Backward-incompatible governance or principle removals.
+	- MINOR: New principle or materially expanded guidance.
+	- PATCH: Clarifications, typos, non-semantic refinements.
+- Compliance: All feature plans **MUST** include a constitution check section documenting how the feature meets principles; CI or PR templates **MUST** reference this requirement.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): provide original ratification date | **Last Amended**: 2026-05-21
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->

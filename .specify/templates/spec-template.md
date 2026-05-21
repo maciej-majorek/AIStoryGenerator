@@ -93,6 +93,12 @@
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
 
+### Non-Functional & Technology Requirements
+
+- **NF-001**: Backend implementations MUST target `.NET 10.0` unless a justified exception is documented and approved.
+- **NF-002**: Frontend implementations MUST use `React` and the project's shared component library for user-facing features.
+- **NF-003**: Testing requirements from the constitution: unit, integration, and end-to-end tests (P1 flows) are mandatory and MUST be specified per feature.
+
 *Example of marking unclear requirements:*
 
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
