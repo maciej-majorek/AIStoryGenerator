@@ -10,11 +10,11 @@ description: "Task list for AI Story Generator feature"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend .NET 10.0 project and solution at `backend/src/AIStoryGenerator.Api` and `backend/AIStoryGenerator.sln`
-- [ ] T002 [P] Create frontend React project at `frontend/` using approved toolchain (Vite or CRA) and initialize `frontend/src/`
-- [ ] T003 [P] Configure linting and formatting: add `.editorconfig`, `backend/.editorconfig`, `frontend/.eslintrc.js`, `.prettierrc` and enable `dotnet format` and `eslint` in CI
-- [ ] T004 [P] Add CI pipeline `.github/workflows/ci.yml` to run build, lint, tests, and bundle-size checks
-- [ ] T005 [P] Add performance and accessibility test harnesses: `tests/perf/` and `frontend/tests/accessibility/` with runners and baseline scripts
+- [X] T001 Create backend .NET 10.0 project and solution at `backend/src/AIStoryGenerator.Api` and `backend/AIStoryGenerator.sln`
+- [X] T002 [P] Create frontend React project at `frontend/` using approved toolchain (Vite or CRA) and initialize `frontend/src/`
+- [X] T003 [P] Configure linting and formatting: add `.editorconfig`, `backend/.editorconfig`, `frontend/.eslintrc.js`, `.prettierrc` and enable `dotnet format` and `eslint` in CI
+- [X] T004 [P] Add CI pipeline `.github/workflows/ci.yml` to run build, lint, tests, and bundle-size checks
+- [X] T005 [P] Add performance and accessibility test harnesses: `tests/perf/` and `frontend/tests/accessibility/` with runners and baseline scripts
 
 ---
 
@@ -22,15 +22,15 @@ description: "Task list for AI Story Generator feature"
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
-- [ ] T006 [P] Add API controller scaffold `backend/src/Controllers/GenerationController.cs` implementing POST `/api/v1/generate`
-- [ ] T007 [P] Create models: `backend/src/Models/StoryRequest.cs`, `backend/src/Models/GenerationJob.cs`, `backend/src/Models/GeneratedStory.cs`
-- [ ] T008 [P] Implement `StoryGeneratorService` in `backend/src/Services/StoryGeneratorService.cs` (provider orchestration)
-- [ ] T009 [P] Add provider abstraction `backend/src/Services/IStoryProvider.cs` and a placeholder provider `backend/src/Services/LocalMockStoryProvider.cs`
-- [ ] T010 [P] Implement safety & moderation middleware `backend/src/Middleware/SafetyMiddleware.cs`
-- [ ] T011 [P] Implement in-memory job store `backend/src/Services/JobStore/InMemoryJobStore.cs` for session-only jobs
-- [ ] T012 [P] Configure app settings and secrets: `backend/appsettings.json` and docs for AI provider keys in `.env.example`
-- [ ] T013 [P] Add error handling and structured logging: `backend/src/Infrastructure/ErrorHandlingMiddleware.cs` + logging config in `backend/appsettings.json`
-- [ ] T014 [P] Add request validation for `StoryRequest` (`backend/src/Validators/StoryRequestValidator.cs`)
+- [X] T006 [P] Add API controller scaffold `backend/src/Controllers/GenerationController.cs` implementing POST `/api/v1/generate`
+- [X] T007 [P] Create models: `backend/src/Models/StoryRequest.cs`, `backend/src/Models/GenerationJob.cs`, `backend/src/Models/GeneratedStory.cs`
+- [X] T008 [P] Implement `StoryGeneratorService` in `backend/src/Services/StoryGeneratorService.cs` (provider orchestration)
+- [X] T009 [P] Add provider abstraction `backend/src/Services/IStoryProvider.cs` and a placeholder provider `backend/src/Services/LocalMockStoryProvider.cs`
+- [X] T010 [P] Implement safety & moderation middleware `backend/src/Middleware/SafetyMiddleware.cs`
+- [X] T011 [P] Implement in-memory job store `backend/src/Services/JobStore/InMemoryJobStore.cs` for session-only jobs
+- [X] T012 [P] Configure app settings and secrets: `backend/appsettings.json` and docs for AI provider keys in `.env.example`
+- [X] T013 [P] Add error handling and structured logging: `backend/src/Infrastructure/ErrorHandlingMiddleware.cs` + logging config in `backend/appsettings.json`
+- [X] T014 [P] Add request validation for `StoryRequest` (`backend/src/Validators/StoryRequestValidator.cs`)
 
 **Checkpoint**: Foundation ready — user story work can begin
 
