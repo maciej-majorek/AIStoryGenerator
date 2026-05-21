@@ -1,0 +1,4 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+.app { display: flex; height: 100vh; }
+.panel { width: 360px; padding: 16px; background: #f7f7f8; border-right: 1px solid #e2e2e2; }
+.viewer { flex: 1; padding: 16px; }
