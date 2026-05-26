@@ -36,7 +36,8 @@ public class SafetyMiddleware
             try
             {
                 // Read and validate the request body
-                using var reader = new StreamReader(context.Request.Body);
+                // Use leaveOpen: true to prevent disposing the underlying stream
+                using var reader = new StreamReader(context.Request.Body, leaveOpen: true);
                 var body = await reader.ReadToEndAsync();
                 context.Request.Body.Position = 0;
 

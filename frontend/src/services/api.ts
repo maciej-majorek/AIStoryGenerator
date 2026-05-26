@@ -50,7 +50,10 @@ export class GenerationApiClient {
 
       if (!response.ok) {
         const error = await response.json().catch(() => ({ message: response.statusText }));
-        throw new Error(error.message || `HTTP ${response.status}`);
+        const errorMessages = error.errors && error.errors.length > 0 
+          ? error.errors.join(', ')
+          : error.message || `HTTP ${response.status}`;
+        throw new Error(errorMessages);
       }
 
       const data: GenerateResponse = await response.json();
