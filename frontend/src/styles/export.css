@@ -1,0 +1,112 @@
+/* Export controls styling */
+
+.export-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+}
+
+.export-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 120px;
+}
+
+.export-btn:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.export-btn:active {
+  transform: scale(0.98);
+}
+
+.export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.export-btn.copy-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.export-btn.copy-btn:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6a3f92 100%);
+  border-color: #5568d3;
+}
+
+.export-btn.download-btn {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border-color: #48bb78;
+}
+
+.export-btn.download-btn:hover {
+  background: linear-gradient(135deg, #3ba66a 0%, #2d8659 100%);
+  border-color: #3ba66a;
+}
+
+.export-btn.metadata-btn {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  color: white;
+  border-color: #ed8936;
+}
+
+.export-btn.metadata-btn:hover {
+  background: linear-gradient(135deg, #d97e2d 0%, #cc5a17 100%);
+  border-color: #d97e2d;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .export-btn {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+
+  .export-btn:hover {
+    background: #444;
+    border-color: #666;
+  }
+
+  .export-btn.copy-btn {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f92 100%);
+    border-color: #667eea;
+  }
+
+  .export-btn.download-btn {
+    background: linear-gradient(135deg, #3ba66a 0%, #2d8659 100%);
+    border-color: #48bb78;
+  }
+
+  .export-btn.metadata-btn {
+    background: linear-gradient(135deg, #d97e2d 0%, #cc5a17 100%);
+    border-color: #ed8936;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .export-controls {
+    gap: 4px;
+  }
+
+  .export-btn {
+    min-width: 80px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
